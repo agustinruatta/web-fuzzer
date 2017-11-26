@@ -51,3 +51,6 @@ build-iPhoneSimulator/
 
 # Rubymine config
 /.idea
+
+# Requests log
+logs/requests_log.txt
