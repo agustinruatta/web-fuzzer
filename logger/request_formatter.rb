@@ -1,5 +1,6 @@
 module Logger
   module CSVColumns
+    KIND_OF = 'kind_of'
     REQUEST_TIME = 'request_time'
     HOST = 'host'
     HTTP_METHOD = 'http_method'
@@ -30,9 +31,9 @@ module Logger
     
     def columns
       return [
-          "\"#{CSVColumns::REQUEST_TIME}\",\"#{CSVColumns::HOST}\",\"#{CSVColumns::HTTP_METHOD}\"," + 
-              "\"#{CSVColumns::HTTP_VERSION}\",\"#{CSVColumns::URI}\",\"#{CSVColumns::USER_AGENT}\"," +
-              "\"#{CSVColumns::COOKIES}\",\"#{CSVColumns::ACCEPT}\""
+          "\"#{CSVColumns::KIND_OF}\",\"#{CSVColumns::REQUEST_TIME}\",\"#{CSVColumns::HOST}\"," + 
+              "\"#{CSVColumns::HTTP_METHOD}\",\"#{CSVColumns::HTTP_VERSION}\",\"#{CSVColumns::URI}\"," +
+              "\"#{CSVColumns::USER_AGENT}\",\"#{CSVColumns::COOKIES}\",\"#{CSVColumns::ACCEPT}\""
       ]
     end
     
@@ -46,7 +47,7 @@ module Logger
     # @param [WEBrick::HTTPRequest] request
     # @return string
     def host(request)
-      return request.header['host'][0].class
+      return request.header['host'][0]
     end
 
     # @param [WEBrick::HTTPRequest] request
