@@ -53,4 +53,4 @@ build-iPhoneSimulator/
 /.idea
 
 # Requests log
-logs/requests_log.txt
+/data
